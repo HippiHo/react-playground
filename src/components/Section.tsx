@@ -1,4 +1,3 @@
-import { PropsWithChildren } from "react";
 import styled from "styled-components";
 import { useContext } from "react";
 import { LevelContext } from "../contexts/LevelContext.js";
@@ -12,10 +11,11 @@ const StyledSection = styled.section`
   border-radius: 8px;
   padding: 20px;
   width: 50vw;
+  overflow: hidden;
   background-color: ${({ color }) =>
-    (color === "1" && "red") ||
-    (color === "2" && "orange") ||
-    (color === "3" && "yellow") ||
+    (color === "1" && "#ff00be") ||
+    (color === "2" && "#f29fdd") ||
+    (color === "3" && "#f1c7e6") ||
     "white"};
 `;
 
