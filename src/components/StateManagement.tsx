@@ -40,6 +40,13 @@ const UpdateButton = styled.button`
   padding: 10px;
   flex: 1;
   cursor: pointer;
+  font-weight: bold;
+`;
+
+const InfoText = styled.div`
+  font-size: 10px;
+  flex: 1;
+  text-align: center;
 `;
 
 interface Person {
@@ -58,6 +65,7 @@ const StateManagement = () => {
       return this.firstName + " " + this.lastName;
     },
   });
+  const [clickTracker, setClickTracker] = useState<number>(0);
 
   const totalFruits = (numbersArray: number[]) => {
     let sum = 0;
@@ -81,6 +89,7 @@ const StateManagement = () => {
     target.firstName.value = "";
     target.newNumber.value = 0;
     target.fruit.value = "";
+    setClickTracker((prev) => prev + 1);
   };
 
   return (
@@ -104,6 +113,9 @@ const StateManagement = () => {
           Fruit: <input id="fruit" type="text" />
         </label>
         <UpdateButton type="submit">Update State</UpdateButton>
+        <InfoText>
+          The button was clicked <b>{clickTracker}</b> times.
+        </InfoText>
       </StyledForm>
     </Border>
   );
