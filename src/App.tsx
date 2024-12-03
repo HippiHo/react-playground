@@ -1,6 +1,7 @@
 import Heading from "./components/Heading";
 import Section from "./components/Section";
 import Clock from "./components/Clock";
+import StateManagement from "./components/StateManagement";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
           </Section>
         </Section>
       </Section>
+      <StateManagement />
     </div>
   );
 }
